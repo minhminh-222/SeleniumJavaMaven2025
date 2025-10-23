@@ -10,7 +10,7 @@ public class LocatorsCRM {
     public static String inputEmail = "//input[@id = 'email']";
     public static String inputPassword = "//input[@id = 'password']";
     public static String buttonLogin = "//button[normalize-space() = 'Login']";
-    public static String checkboxRememberMe = "//input[@type = 'checkbox']";
+    public static String checkboxRememberMe = "//input[@id='remember']";
     public static String labelRememberMe = "//label[@for='remember']";
     public static String linkForgotPassword = "//a[normalize-space()='Forgot Password?']";
     public static String alertErrorMessage = "//div[contains(@class,'alert-danger')]";
