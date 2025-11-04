@@ -1,0 +1,48 @@
+package Bai7_WebDriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class HandleBasicMethod {
+
+    static void main(String[] args) throws InterruptedException {
+
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get("https://crm.anhtester.com/admin/authentication");
+
+        driver.findElement(By.xpath(LocatorsCRM.inputEmail)).clear();
+        driver.findElement(By.xpath(LocatorsCRM.inputEmail)).sendKeys("admin@example.com");
+
+        driver.findElement(By.xpath(LocatorsCRM.inputPassword)).clear();
+        driver.findElement(By.xpath(LocatorsCRM.inputPassword)).sendKeys("123456");
+
+        driver.findElement(By.xpath(LocatorsCRM.buttonLogin)).click();
+
+        Thread.sleep(2000);
+
+        List<WebElement> listMenu = driver.findElements(By.xpath("//ul [@id='side-menu']/li[contains(@class,'menu-item')]"));
+        System out println(listMenu.size());
+
+        for (i=0,o<listMenu.size(),i++){
+            System out println("Menu" + (i+1) + ": " + listMenu.get(i).getText());
+        }
+
+        System out println(listMenu.get(0).getText().equal("Dashboard"));
+
+
+       
+
+
+
+
+
+        driver.quit();
+
+
+
+    }
+}

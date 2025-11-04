@@ -1,4 +1,4 @@
-package Bai6_WebDriver;
+package Bai6_WebElement;
 
 import Bai5_Locator.Baitap.LocatorsCRM;
 import org.openqa.selenium.By;
@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Demo_SenKeys_Click_Clear {
+public class Demo_Submit {
 
     static void main(String[] args) {
         WebDriver driver;
@@ -22,7 +22,8 @@ public class Demo_SenKeys_Click_Clear {
         driver.findElement(By.xpath(LocatorsCRM.inputPassword)).clear();
         driver.findElement(By.xpath(LocatorsCRM.inputPassword)).sendKeys("123456");
 
-        driver.findElement(By.xpath(LocatorsCRM.buttonLogin)).click();
+        //driver.findElement(By.xpath(LocatorsCRM.buttonLogin)).click();
+        driver.findElement(By.xpath(LocatorsCRM.inputPassword)).submit();
 
         driver.quit();
 

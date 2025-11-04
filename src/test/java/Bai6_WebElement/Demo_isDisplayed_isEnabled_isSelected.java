@@ -1,4 +1,4 @@
-package Bai6_WebDriver;
+package Bai6_WebElement;
 
 import Bai5_Locator.Baitap.LocatorsCRM;
 import org.openqa.selenium.By;

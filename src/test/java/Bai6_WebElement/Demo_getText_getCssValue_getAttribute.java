@@ -1,4 +1,4 @@
-package Bai6_WebDriver;
+package Bai6_WebElement;
 
 import Bai5_Locator.Baitap.LocatorsCRM;
 import org.openqa.selenium.By;
@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Demo_getText {
+public class Demo_getText_getCssValue_getAttribute {
 
     static void main(String[] args) throws InterruptedException {
         WebDriver driver;
@@ -18,6 +18,14 @@ public class Demo_getText {
 
         driver.findElement(By.xpath(LocatorsCRM.inputEmail)).clear();
         driver.findElement(By.xpath(LocatorsCRM.inputEmail)).sendKeys("admin@example.com");
+
+        //Get Attribute Email
+        String AttributeEmail = driver.findElement(By.xpath(LocatorsCRM.inputEmail)).getAttribute("value");
+        System.out.println("Attribute Email: " + AttributeEmail);
+
+        //Get Attribute password
+        String AttributePassword = driver.findElement(By.xpath(LocatorsCRM.inputPassword)).getAttribute("value");
+        System.out.println("Attribute Password: " + AttributePassword);
 
         driver.findElement(By.xpath(LocatorsCRM.inputPassword)).clear();
         driver.findElement(By.xpath(LocatorsCRM.inputPassword)).sendKeys("123456");
