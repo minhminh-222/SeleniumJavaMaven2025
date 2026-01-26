@@ -1,5 +1,8 @@
 package Bai5_Locator.Baitap;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class LocatorsCRM {
 
     public static String url = "https://crm.anhtester.com/admin/authentication";
@@ -43,12 +46,24 @@ public class LocatorsCRM {
     public static String inputCity = "//input[@id='city']";
     public static String inputState = "//input[@id='state']";
     public static String inputZipCode = "//input[@id='zip']";
-    public static String inputGroup = "//button[contains(@data-id,'groups_in') and @title='Nothing selected']";
+    public static String inputGroup = "//button[@data-id='groups_in[]']";
     public static String inputSearchGroup = "//button [contains(@data-id,'groups_in')]/following-sibling::div//input[@type='search']";
-    public static String inputCurrency = "//button [contains(@data-id,'default_currency') and (@title='System Default')]";
+    public static String selectGroupVIP = "//span[normalize-space()='VIP']";
+    public static String inputCurrency = "//button[@data-id='default_currency']";
     public static String inputSearchCurrency = "//button [contains(@data-id,'default_currency')]/following-sibling::div//input[@type='search']";
-    public static String inputDefaultLanguage = "//button [contains(@data-id,'default_language') and (@title='System Default')]";
+
+    public static String inputDefaultLanguage = "//button[@data-id='default_language']";
     public static String selectDefaultLanguage = "//span[normalize-space()='Vietnamese']";
+    //Cách 2: viết 1 biến rồi truyền tham số vào
+    public static String selectDefaultLanguage2 = "//span[normalize-space()='%s']";
+    //cách 3: viết hàm rồi return về xpath
+    public static String xpathSelectLanguage(String language){
+        String xpathDefaultLaguage = "//span[normalize-space()='" + language + "']";
+        return xpathDefaultLaguage;
+    }
+
+
+
     public static String inputCountry = "//div[@app-field-wrapper='country']/descendant::div//button[contains(@data-id,'country') and (@title='Nothing selected')]";
     public static String selectCountry = "//div[@app-field-wrapper='country']/descendant::div//button[contains(@data-id,'country')]/following-sibling::div//input[@type='search']";
     public static String buttonSaveAndCreateContactCustumers = "//button[normalize-space()='Save and create contact']";
@@ -72,5 +87,10 @@ public class LocatorsCRM {
     public static String inputStartDate = "//input[@id='start_date']";
     public static String buttonSaveProject = "//button[normalize-space()='Save']";
 
+
+    //Lấy ngày hiện tại
+    public static LocalDateTime now = LocalDateTime.now();
+    public static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+    public static String formatted = now.format(formatter);
 
 }
